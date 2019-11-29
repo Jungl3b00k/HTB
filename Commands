@@ -1,3 +1,6 @@
+gzip
+gzip -d file.gz
+
 masscan probe to establish the open ports in the host.
 #masscan -e tun0 -p1-65535,U:1-65535 10.10.10.101 --rate=700
 
