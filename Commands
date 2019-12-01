@@ -9,3 +9,6 @@ masscan probe to establish the open ports in the host.
 
 ##Gobuster Dir enumeration##
 gobuster -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-small.txt -t 20 -e -x php,htm,html,txt -u http://10.10.10.101/
+
+##bypass-bash-restrictions##
+https://book.hacktricks.xyz/linux-unix/useful-linux-commands/bypass-bash-restrictions
