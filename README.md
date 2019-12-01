@@ -10,7 +10,7 @@ masscan probe to establish the open ports in the host.<br>
 #nmap -sV -v -O -sS -T5 <target><br>
 
 ##Gobuster Dir enumeration##<br>
-gobuster -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-small.txt -t 20 -e -x php,htm,html,txt -u http://target<br>
+```gobuster -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-small.txt -t 20 -e -x php,htm,html,txt -u http://target<br>
 
 ##bypass-bash-restrictions##<br>
 https://book.hacktricks.xyz/linux-unix/useful-linux-commands/bypass-bash-restrictions<br>
