@@ -69,3 +69,7 @@ No (R) 	 (W) 	(X)<br>
 777 is the same as rwxrwxrwx<br>
 
 755 is the same as rwxr-xr-x<br>
+
+**Dir and File Bruteforce or enumeration**<br>
+*WFUZZ*<br>
+wfuzz -c -z file,/root/SecLists/Discovery/Web-Content/common.txt --hc 404,400 -X GET -u http://10.10.10.160/FUZZ<br>
