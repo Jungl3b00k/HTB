@@ -1,0 +1,27 @@
+https://medium.com/@parthdeshani/how-to-pass-oscp-like-boss-b269f2ea99d
+
+Buffer Overflow
+https://www.youtube.com/watch?v=qSnPayW6F7U&list=PLLKT__MCUeix3O0DPbmuaRuR_4Hxo4m3G
+
+SSH Works how?
+https://www.thegeekyway.com/ultimate-guide-how-ssh-works/
+
+Dockers
+https://docs.docker.com/engine/docker-overview/
+https://www.aquasec.com/wiki/display/containers/Docker+Architecture
+https://geekflare.com/docker-architecture/
+
+HTB Writeup
+CraftBox
+https://blog.csdn.net/weixin_43202322/article/details/101029254
+
+OSCP NOTES
+https://securism.wordpress.com/oscp-notes-exploitation/
+
+enum4linux
+A Linux alternative to enum.exe for enumerating data from Windows and Samba hosts.
+https://labs.portcullis.co.uk/tools/enum4linux/
+
+shodan queries
+nostromo 1.9.6 exploit
+https://www.shodan.io/search?query=%22Server%3A+nostromo%22
