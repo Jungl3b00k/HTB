@@ -8,6 +8,16 @@
 
 **nmap scanning the discovered ports to see what are the services.**<br>
 •	nmap -sV -v -O -sS -T5 {target}<br>
+**Sudoing User...**<br>
+
+ sudo -l	<br>
+ List available commands.<br>
+ sudo <br>
+ command	Run command as root.<br>
+ sudo -u root <br>
+ command	Run command as root.<br>
+ sudo -u user <br>
+ command	Run command as user.<br>
 
 **Subfinder(only subfinder can run large wordlist)**<br>
 •	./subfinder -d freelancer.com -o output.txt<br>
