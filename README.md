@@ -11,9 +11,9 @@
 **Sudoing User...**<br>
 
  sudo -l	--> List available commands.<br>
- sudo --> command	Run command as root.<br>
- sudo -u root -->  command	Run command as root.<br>
- sudo -u user -->  command	Run command as user.<br>
+ sudo command --> 	Run command as root.<br>
+ sudo -u root command	 --> Run command as root.<br>
+ sudo -u user command	-->  Run command as user.<br>
 
 **Subfinder(only subfinder can run large wordlist)**<br>
 •	./subfinder -d freelancer.com -o output.txt<br>
