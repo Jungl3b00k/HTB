@@ -125,5 +125,19 @@ No (R) 	 (W) 	(X)<br>
 777 is the same as rwxrwxrwx<br>
 
 755 is the same as rwxr-xr-x<br>
+**Searching for root permission file and Binaries or SUID binaries***<br>
+![Image description](https://2.bp.blogspot.com/-V6G2dcR6rew/WvxyU3zB5NI/AAAAAAAAW3o/es8P06opgNwUg8gUPjzcLO29dgVYBOOpQCLcBGAs/s1600/0.2.png)<br>
+when special permission is given to each user it becomes SUID, SGID, and sticky bits. When extra bit “4” is set to user(Owner) it becomes SUID (Set user ID) and when bit “2” is set to group it becomes SGID (Set Group ID) and  if other users are allowed to create or delete any file inside a directory then sticky bits “1” is set to that directory.<br>
+What is SUID Permission?
 
+SUID: Set User ID is a type of permission that allows users to execute a file with the permissions of a specified user. Those files which have suid permissions run with higher privileges.  Assume we are accessing the target system as a non-root user and we found suid bit enabled binaries, then those file/program/command can run with root privileges. 
 
+**HOW SUID helps in privilege escalation?**
+https://www.hackingarticles.in/linux-privilege-escalation-using-suid-binaries/ <br>
+https://www.embeddedhacker.com/2019/12/hacking-walkthrough-thm-linux-privesc-playground/<br>
+  **GTFOBins**
+https://gtfobins.github.io/
+
+**Getting files and binaries with root permissions**
+find / -perm -u=s -type f 2>/dev/null
+find / -perm /4000 2>/dev/null 
