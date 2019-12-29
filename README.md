@@ -132,12 +132,12 @@ What is SUID Permission?
 
 SUID: Set User ID is a type of permission that allows users to execute a file with the permissions of a specified user. Those files which have suid permissions run with higher privileges.  Assume we are accessing the target system as a non-root user and we found suid bit enabled binaries, then those file/program/command can run with root privileges. 
 
-**HOW SUID helps in privilege escalation?**
+**HOW SUID helps in privilege escalation?**<br>
 https://www.hackingarticles.in/linux-privilege-escalation-using-suid-binaries/ <br>
 https://www.embeddedhacker.com/2019/12/hacking-walkthrough-thm-linux-privesc-playground/<br>
-  **GTFOBins**
-https://gtfobins.github.io/
+  **GTFOBins**<br>
+https://gtfobins.github.io/<br>
 
-**Getting files and binaries with root permissions**
-find / -perm -u=s -type f 2>/dev/null
-find / -perm /4000 2>/dev/null 
+**Getting files and binaries with root permissions**<br>
+find / -perm -u=s -type f 2>/dev/null<br>
+find / -perm /4000 2>/dev/null <br>
