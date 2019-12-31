@@ -69,7 +69,7 @@ Note:In the above payload python will run and creating bash shell.But while some
 <br>
 python3 -c 'import pty; pty.spawn("/bin/sh")'<br>
 <br>
- Related Shell Escape Sequences...
+ Related Shell Escape Sequences...If commands are limited, you break out of the "jail" shell?
  
     python-->python3 -c 'import pty; pty.spawn("/bin/sh")'
     vi-->   :!bash
