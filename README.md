@@ -110,7 +110,7 @@ drwxr-xr-x<br>
 -rw-rw-rw-<br>
     A file that can be read and written by anyone, but not executed at all.<br>
     
-    
+ netstat -lntp<br>   
 **Understanding Linux File and directory permissions Using Numbers**<br>
 No (R) 	 (W) 	(X)<br>
 0 	          No 	   No 	           No<br>
