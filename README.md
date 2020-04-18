@@ -49,7 +49,7 @@ ls -ld<br>
 wfuzz -c -z file,/root/SecLists/Discovery/Web-Content/common.txt --hc 404,400 -X GET -u http://10.10.10.160/FUZZ<br>
 
 **Gobuster Dir enumeration**<br>
-```gobuster -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-small.txt -t 20 -e -x php,htm,html,txt -u http://target```<br>
+gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-small.txt -t 20 -e -k -x php,htm,html,txt -u https://10.10.10.7/<br>
 
 **REVERSE SHELL**<br>
 
