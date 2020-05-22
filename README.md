@@ -141,4 +141,8 @@ https://gtfobins.github.io/<br>
 **Getting files and binaries with root permissions**<br>
 find / -perm -u=s -type f 2>/dev/null<br>
 find / -perm /4000 2>/dev/null <br>
-![Image description](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LSy0aAo8OKT4I-Ahftv%2F-LT25U7D_AdavNsKUdWf%2F-LT25_VrvhA02WZBj6ca%2Fimage.png?alt=media&token=0d51bea4-1371-4e00-b086-794d486cd950)
+![Image description](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LSy0aAo8OKT4I-Ahftv%2F-LT25U7D_AdavNsKUdWf%2F-LT25_VrvhA02WZBj6ca%2Fimage.png?alt=media&token=0d51bea4-1371-4e00-b086-794d486cd950)</br>
+
+CONNECTING MYSQL</br>
+mysql --host=localhost --user=myname --password=password mydb</br>
+mysql -h localhost -u myname -ppassword mydb</br>
