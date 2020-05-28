@@ -146,3 +146,6 @@ find / -perm /4000 2>/dev/null <br>
 CONNECTING MYSQL</br>
 mysql --host=localhost --user=myname --password=password mydb</br>
 mysql -h localhost -u myname -ppassword mydb</br>
+
+SMBCLIENT Login
+smbclient //10.11.1.31/wwwroot -U Guest 
