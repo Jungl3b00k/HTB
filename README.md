@@ -148,4 +148,5 @@ mysql --host=localhost --user=myname --password=password mydb</br>
 mysql -h localhost -u myname -ppassword mydb</br>
 
 SMBCLIENT Login
+smbclient  //host/home -I 10.11.1.231 -N --option='client min protocol=NT1'
 smbclient //10.11.1.31/wwwroot -U Guest 
